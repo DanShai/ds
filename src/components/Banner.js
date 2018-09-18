@@ -3,7 +3,7 @@ import '../assets/css/styles.css'
 import omega from '../assets/images/omega.png'
 const Banner = props => (
   <section className="showcase">
-    <div className="content">
+    <div className="banner-content">
       <img src={omega} className="logo" alt="Dan Shai" />
       <div className="title">Hello...</div>
       <div className="text">

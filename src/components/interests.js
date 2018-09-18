@@ -8,7 +8,7 @@ const Interet = props => (
     <div className="container grid-3 center">
       <div>
         <i className="fab fa-youtube fa-3x" />
-        <h3>YouTube</h3>
+        <h3>Github</h3>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil,
           reiciendis!
@@ -16,7 +16,7 @@ const Interet = props => (
       </div>
       <div>
         <i className="fas fa-chalkboard-teacher fa-3x" />
-        <h3>Courses</h3>
+        <h3>Blog</h3>
         <Link to="/blog">Blog</Link>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil,
@@ -25,7 +25,7 @@ const Interet = props => (
       </div>
       <div>
         <i className="fas fa-briefcase fa-3x" />
-        <h3>Freelancing Projects</h3>
+        <h3> Projects</h3>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil,
           reiciendis!

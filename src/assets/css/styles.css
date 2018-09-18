@@ -33,15 +33,15 @@ body {
   -webkit-filter: blur(0px);
 }
 
-.showcase:hover .content {
+.showcase:hover .banner-content {
   filter: blur(2px);
   -webkit-filter: blur(2px);
 }
 
-.content {
+.banner-content {
   position: absolute;
   z-index: 1;
-  top: 10%;
+  top: 5%;
   left: 50%;
   margin-top: 105px;
   margin-left: -145px;
@@ -54,17 +54,17 @@ body {
 .pagination {
   display: inline;
 }
-.content .logo {
+.banner-content .logo {
   height: 180px;
   width: 180px;
 }
 
-.content .title {
+.banner-content .title {
   font-size: 2.2rem;
   margin-top: 1rem;
 }
 
-.content .text {
+.banner-content .text {
   line-height: 1.7rem;
   margin-top: 1rem;
 }
@@ -89,6 +89,13 @@ body {
   grid-gap: 2rem;
   grid-template-columns: repeat(2, 1fr);
 }
+.interests{
+  padding: 5%;
+}
+
+.about {
+  padding: 1%;
+}
 
 .center {
   text-align: center;
@@ -111,7 +118,6 @@ body {
   left: 0;
   bottom: 0;
   width: 100%;
-  position: fixed;
   height: 50px;
 }
 
@@ -125,18 +131,18 @@ body {
     height: 50vh;
   }
 
-  .content {
+  .banner-content {
     top: 5%;
     margin-top: 1rem;
   }
 
-  .content .logo {
+  .banner-content .logo {
     height: 140px;
     width: 140px;
   }
 
-  .content .title,
-  .content .text {
+  .banner-content .title,
+  .banner-content .text {
     display: none;
   }
 
@@ -145,7 +151,7 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .interest div {
+  .interests div {
     top: 1%;
     border-bottom: #333 dashed 1px;
     padding: 1.2rem 1rem;
@@ -154,16 +160,16 @@ body {
 
 /* Landscape */
 @media (max-height: 500px) {
-  .content .title,
-  .content .text {
+  .banner-content .title,
+  .banner-content .text {
     display: none;
   }
-  .content .title,
-  .content .text {
+  .banner-content .title,
+  .banner-content .text {
     display: none;
   }
 
-  .content {
+  .banner-content {
     top: 0;
   }
 }

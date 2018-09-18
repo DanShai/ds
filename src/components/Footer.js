@@ -1,9 +1,9 @@
 import React from 'react'
 
 const Footer = props => (
-  <div className="footer center bg-dark">
+  <section className="footer center bg-dark">
     <p>Dan shai &copy; 2018</p>
-  </div>
+  </section>
 )
 
 export default Footer
