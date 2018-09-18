@@ -7,11 +7,11 @@ const About = props => (
   <section className="about bg-light">
     <div className="container">
       <div className="grid-2">
-        <div className="center">
+        <div className="box border-2">
           <i className="fas fa-laptop-code fa-10x" />
         </div>
-        <div>
-          <h3>About Us</h3>
+        <div className="box border-2">
+          <h3>About Me</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non eos
             aperiam labore consectetur maiores ea magni exercitationem similique

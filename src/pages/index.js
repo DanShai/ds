@@ -16,6 +16,7 @@ class HomeIndex extends React.Component {
             { name: 'keywords', content: 'sample, something' },
           ]}
         />
+
         <Interet />
         <About />
       </Layout>

@@ -27,14 +27,19 @@ class Blog extends React.Component {
             {posts.map(({ node }) => {
               const title = get(node, 'frontmatter.title') || node.fields.slug
               return (
-                <div key={node.fields.slug} className="bsummary">
+                <div key={node.fields.slug} className="box border-1">
                   <h3>
-                    <Link to={node.fields.slug}>
-                      <span className="bspan"> {title} </span>
+                    <Link className="alink" to={node.fields.slug}>
+                      <span>{title}</span>{' '}
+                      <span>
+                        <small>{node.frontmatter.date}</small>
+                      </span>
                     </Link>
                   </h3>
-                  <small>{node.frontmatter.date}</small>
-                  <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+                  <p
+                    className="summary"
+                    dangerouslySetInnerHTML={{ __html: node.excerpt }}
+                  />
                 </div>
               )
             })}

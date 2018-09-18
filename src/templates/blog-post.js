@@ -21,7 +21,7 @@ class BlogPostTemplate extends React.Component {
           title={`${post.frontmatter.title} | ${siteTitle}`}
         />
         <section className="container">
-          <Link className="button special icon fa-back" to="/blog">
+          <Link className="alink" to="/blog">
             Back to Blog
           </Link>
           <h3>
@@ -29,27 +29,25 @@ class BlogPostTemplate extends React.Component {
           </h3>
           <h2>{post.frontmatter.title}</h2>
           <div
-            className="box"
+            className="box border-1"
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
 
-          <ul className="pagination">
+          <ul className="grid-2">
             {previous && (
-              <li>
-                <span className="button special">
-                  <Link to={previous.fields.slug} rel="prev">
+              <li className="left">
+                <span>
+                  <Link className="alink" to={previous.fields.slug} rel="prev">
                     {previous.frontmatter.title}
                   </Link>
                 </span>
-                {next && <span className="page active">&hellip;</span>}
               </li>
             )}
 
             {next && (
-              <li>
-                {previous && <span className="page active">&hellip;</span>}
-                <span className="button special">
-                  <Link to={next.fields.slug} rel="next">
+              <li className="right">
+                <span>
+                  <Link className="alink" to={next.fields.slug} rel="next">
                     {next.frontmatter.title}
                   </Link>
                 </span>

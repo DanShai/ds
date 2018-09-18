@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import '../assets/css/styles.css'
-import Banner from './Banner'
-import Footer from './Footer'
+import Banner from './banner'
+import Footer from './footer'
 
 class Layout extends React.Component {
   constructor(props) {

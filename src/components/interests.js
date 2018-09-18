@@ -6,7 +6,7 @@ import '../assets/css/styles.css'
 const Interet = props => (
   <section className="interests">
     <div className="container grid-3 center">
-      <div>
+      <div className="box border-1">
         <i className="fab fa-youtube fa-3x" />
         <h3>Github</h3>
         <p>
@@ -14,16 +14,18 @@ const Interet = props => (
           reiciendis!
         </p>
       </div>
-      <div>
+      <div className="box border-1">
         <i className="fas fa-chalkboard-teacher fa-3x" />
         <h3>Blog</h3>
-        <Link to="/blog">Blog</Link>
+        <Link className="alink" to="/blog">
+          Blog
+        </Link>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil,
           reiciendis!
         </p>
       </div>
-      <div>
+      <div className="box border-1">
         <i className="fas fa-briefcase fa-3x" />
         <h3> Projects</h3>
         <p>
