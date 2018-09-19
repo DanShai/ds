@@ -5,6 +5,7 @@ module.exports = {
     description: ' Dan Blog ',
     siteUrl: 'https://github.com/Danshai/',
   },
+  pathPrefix: '/tempo',
   plugins: [
     'gatsby-plugin-react-helmet',
     {
