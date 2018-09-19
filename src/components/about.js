@@ -8,7 +8,14 @@ const About = props => (
     <div className="container">
       <div className="grid-2">
         <div className="box border-2">
-          <i className="fas fa-laptop-code fa-10x" />
+          <h3>Hobbies</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non eos
+            aperiam labore consectetur maiores ea magni exercitationem similique
+            laborum sed, unde, autem vel iure doloribus aliquid. Aspernatur
+            explicabo consectetur consequatur non nesciunt debitis quos alias
+            soluta, ratione, ipsa officia reiciendis.
+          </p>
         </div>
         <div className="box border-2">
           <h3>About Me</h3>

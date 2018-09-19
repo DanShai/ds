@@ -8,10 +8,7 @@ const Banner = props => (
     <Menu />
     <div className="banner-content">
       <img src={omega} className="logo" alt="Dan Shai" />
-      <div className="title">Hello...</div>
-      <div className="text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, vel.
-      </div>
+      <div className="title">Dan Shai</div>
     </div>
   </section>
 )

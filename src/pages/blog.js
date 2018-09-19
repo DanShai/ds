@@ -20,7 +20,7 @@ class Blog extends React.Component {
           <meta name="description" content="Generic Page" />
         </Helmet>
         <section className="container">
-          <header>
+          <header className="bheader">
             <h2> Latest Posts </h2>
           </header>
           <div className="grid-2">

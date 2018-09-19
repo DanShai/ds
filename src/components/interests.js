@@ -2,21 +2,20 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import '../assets/css/styles.css'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee, faHome } from '@fortawesome/free-solid-svg-icons'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
 const Interet = props => (
   <section className="interests">
     <div className="container grid-3 center">
       <div className="box border-1">
-        <i className="fab fa-youtube fa-3x" />
-        <h3>Github</h3>
+        <a href="https://github.com/DanShai">GitHub</a>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil,
           reiciendis!
         </p>
       </div>
       <div className="box border-1">
-        <i className="fas fa-chalkboard-teacher fa-3x" />
-        <h3>Blog</h3>
         <Link className="alink" to="/blog">
           Blog
         </Link>
@@ -26,8 +25,9 @@ const Interet = props => (
         </p>
       </div>
       <div className="box border-1">
-        <i className="fas fa-briefcase fa-3x" />
-        <h3> Projects</h3>
+        <Link className="alink" to="/mnistpred">
+          Projects
+        </Link>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil,
           reiciendis!

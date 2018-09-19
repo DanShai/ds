@@ -24,10 +24,12 @@ class BlogPostTemplate extends React.Component {
           <Link className="alink" to="/blog">
             Back to Blog
           </Link>
-          <h3>
-            {post.frontmatter.date} , {post.frontmatter.author}
-          </h3>
-          <h2>{post.frontmatter.title}</h2>
+          <span className="bheader">
+            <h3>
+              {post.frontmatter.date} , {post.frontmatter.author}
+            </h3>
+            <h2>{post.frontmatter.title}</h2>
+          </span>
           <div
             className="box border-1"
             dangerouslySetInnerHTML={{ __html: post.html }}
