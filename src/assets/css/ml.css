@@ -39,6 +39,11 @@
   color: darkgray;
 }
 
+.prob div {
+  display: inline-grid;
+  padding: 0 2rem;
+}
+
 .prob {
   margin: 1em;
   grid-gap: 2rem;

@@ -55,6 +55,7 @@ h1 {
 
 /* ---  position absolute will to the body if parent has not position set!
         z-index needs position set
+        width needs display set
 ----*/
 .banner-content {
   position: absolute;

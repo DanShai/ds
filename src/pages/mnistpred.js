@@ -150,7 +150,7 @@ export default class Mnist extends React.Component {
             <h2> Tensorflow Mnist Training and Predictions </h2>
             <div className="btdiv">
               <button
-                className="special border-1 boxshadow"
+                className="border-1 special boxshadow"
                 onClick={() =>
                   this.setState({ training: !this.state.training })
                 }
@@ -160,7 +160,7 @@ export default class Mnist extends React.Component {
 
               {this.state.trained && (
                 <button
-                  className="special border-1 boxshadow"
+                  className="border-1 special boxshadow"
                   onClick={() => this.predict()}
                 >
                   Predict
