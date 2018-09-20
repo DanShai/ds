@@ -141,7 +141,7 @@ export default class Mnist extends React.Component {
           <title>Mnist - Prediction </title>
           <meta name="description" content="Generic Page" />
         </Helmet>
-        <section className="container border-1 box-shadow">
+        <section className="container border-1 boxshadow">
           <header className="bheader">
             <h2> Mnist Convolutional Neural Network Prediction </h2>
           </header>
@@ -150,7 +150,7 @@ export default class Mnist extends React.Component {
             <h2> Tensorflow Mnist Training and Predictions </h2>
             <div className="btdiv">
               <button
-                className="special"
+                className="special border-1 boxshadow"
                 onClick={() =>
                   this.setState({ training: !this.state.training })
                 }
@@ -159,13 +159,16 @@ export default class Mnist extends React.Component {
               </button>
 
               {this.state.trained && (
-                <button className="special" onClick={() => this.predict()}>
+                <button
+                  className="special border-1 boxshadow"
+                  onClick={() => this.predict()}
+                >
                   Predict
                 </button>
               )}
             </div>
 
-            <div className="prob  border-1 box-shadow">
+            <div className="prob  border-1 boxshadow">
               {this.state.predicted}
             </div>
 

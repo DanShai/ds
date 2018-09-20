@@ -7,7 +7,7 @@ const About = props => (
   <section className="about bg-light">
     <div className="container">
       <div className="grid-2">
-        <div className="box border-2">
+        <div className="box border-2 boxshadow">
           <h3>Hobbies</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non eos
@@ -17,7 +17,7 @@ const About = props => (
             soluta, ratione, ipsa officia reiciendis.
           </p>
         </div>
-        <div className="box border-2">
+        <div className="box border-2 boxshadow">
           <h3>About Me</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non eos

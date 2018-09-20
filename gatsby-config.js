@@ -3,7 +3,7 @@ module.exports = {
     title: 'Dan - Shai',
     author: 'Dan Shai',
     description: ' Dan Blog ',
-    siteUrl: 'https://github.com/Danshai/',
+    siteUrl: 'https://github.com/Danshai/tempo',
   },
   pathPrefix: '/tempo',
   plugins: [
@@ -63,4 +63,18 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-offline`,
   ],
+}
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  if (stage === 'build-html') {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /bad-module/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    })
+  }
 }

@@ -39,19 +39,6 @@
   color: darkgray;
 }
 
-.border-1 {
-  border: 1px solid #555;
-  background: #444;
-}
-
-.box-shadow {
-  box-shadow: 2px 2px 0 0 rgba(0, 0, 0, 0.05);
-}
-.border-2 {
-  border: 1px solid #ccc;
-  background: #f4f4f4;
-}
-
 .prob {
   margin: 1em;
   grid-gap: 2rem;

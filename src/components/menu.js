@@ -29,28 +29,44 @@ export default class Menu extends React.Component {
   hidemenu() {
     this.scrolly = this.curscrolly
     this.hidetimeout = setTimeout(() => {
-      this.setState({ showmenu: false, count: this.state.count + 1 })
+      this.setState({
+        showmenu: false,
+        count: this.state.count + 1,
+      })
     }, 500)
+    console.log('in hide', JSON.stringify(this.state))
   }
 
   handlelabel() {
     const { count } = this.state
     if (count > 0) {
       this.hidetimeout = setTimeout(() => {
-        this.setState({ showmenu: false, count: 0 })
+        this.setState({
+          showmenu: false,
+          count: 0,
+        })
       }, 500)
     } else {
       this.hidetimeout = setTimeout(() => {
-        this.setState({ count: this.state.count + 1 })
+        this.setState({
+          count: this.state.count + 1,
+          showmenu: true,
+        })
       }, 500)
     }
+
+    console.log('in label', JSON.stringify(this.state))
   }
 
   handlescroll() {
     this.curscrolly = window.scrollY
     if (this.scrolly !== this.curscrolly) {
-      this.setState({ showmenu: true })
-      this.scrolly = this.curscrolly
+      this.hidetimeout = setTimeout(() => {
+        this.setState({
+          showmenu: true,
+        })
+        this.scrolly = this.curscrolly
+      }, 50)
     }
   }
 
@@ -60,7 +76,6 @@ export default class Menu extends React.Component {
       <nav className={`menu ${this.state.showmenu ? 'visible' : 'hidden'}`}>
         <input
           type="checkbox"
-          href="#"
           className="menu-open"
           name="menu-open"
           id="menu-open"

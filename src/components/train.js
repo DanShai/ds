@@ -61,7 +61,7 @@ class Train extends React.Component {
 
     return (
       <div>
-        <div className="chart  border-1 box-shadow">{metricElems}</div>
+        <div className="chart  border-1 boxshadow">{metricElems}</div>
         {this.state.modelElement}
       </div>
     )
