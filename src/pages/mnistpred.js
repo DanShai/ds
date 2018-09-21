@@ -8,6 +8,7 @@ import mnist from 'mnist'
 import Canvas from '../components/canvas'
 import Layout from '../components/layout'
 import Helmet from 'react-helmet'
+import favicon from '../assets/images/omega.png'
 
 import '../assets/css/ml.css'
 
@@ -140,6 +141,8 @@ export default class Mnist extends React.Component {
         <Helmet>
           <title>Mnist - Prediction </title>
           <meta name="description" content="Generic Page" />
+          link=
+          {[{ rel: 'shortcut icon', type: 'image/png', href: `${favicon}` }]}
         </Helmet>
         <section className="container">
           <header className="bheader">
