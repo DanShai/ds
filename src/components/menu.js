@@ -12,7 +12,6 @@ export default class Menu extends React.Component {
     this.state = {
       showmenu: false,
       open: false,
-      count: 0,
     }
     this.scrolly = 0
     this.curscrolly = 0
@@ -20,6 +19,16 @@ export default class Menu extends React.Component {
     this.start = null
     this._isMounted = false
   }
+
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   return (
+  //     this.state.open != nextState.open ||
+  //     this.state.showmenu != nextState.showmenu
+  //   )
+  // }
+  // componentDidUpdate(prevProps) {
+  //   this.autoclose()
+  // }
 
   componentDidMount() {
     this._isMounted = true
@@ -37,37 +46,29 @@ export default class Menu extends React.Component {
     if (this._isMounted) {
       this.setState({
         showmenu: false,
-        count: 0,
         open: false,
       })
+      console.log('in hide', JSON.stringify(this.state))
+      this.start = null
     }
-    console.log('in hide', JSON.stringify(this.state))
-    this.start = null
   }
 
   btnClicked() {
     if (this._isMounted) {
       this.setState({
         open: !this.state.open,
-        count: this.state.count + 1,
       })
     }
     console.log('in btn', JSON.stringify(this.state))
-    if (this.state.count > 1) {
-      this.hidemenu()
-    }
+    this.autoclose()
   }
 
   autoclose() {
-    if (
-      this.state.count == 0 &&
-      this.state.showmenu == true &&
-      this.state.open == false
-    ) {
+    if (this.state.showmenu && !this.state.open) {
       const now = new Date().getSeconds()
       if (this.start !== null && now - this.start > 5) {
         console.log(this.start, now)
-        console.log('in auto', JSON.stringify(this.state))
+        console.log('in auto ', JSON.stringify(this.state))
         this.hidemenu()
       }
     }
@@ -86,7 +87,7 @@ export default class Menu extends React.Component {
     this.start = new Date().getSeconds()
     this.autotimeout = setTimeout(() => {
       this.autoclose()
-    }, 7000)
+    }, 6000)
   }
 
   render() {

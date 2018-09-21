@@ -1,26 +1,30 @@
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 560px) {
   .btdiv,
   .prob,
   .grid2x2,
-  .innermenucontainer,
   .bsummary,
   .namegt,
   .chart {
     grid-template-columns: 1fr !important;
   }
-}
 
-.menucontainer {
-  margin: 1%;
+  .special {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 2rem;
+    height: 80%;
+  }
+  .btdiv {
+    grid-gap: 2rem;
+  }
 }
 
 .btdiv {
-  margin: 1rem;
-  grid-column-gap: 5rem;
+  margin: 2px 1rem;
+  grid-gap: 5rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   width: 95%;
-  height: 5rem;
   justify-content: space-evenly;
 }
 
@@ -39,28 +43,36 @@
   color: darkgray;
 }
 
-.prob div {
-  display: inline-grid;
-  padding: 0 2rem;
-}
-
 .prob {
-  margin: 1em;
-  grid-gap: 2rem;
+  margin: 1rem;
+  grid-gap: 1rem;
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   justify-content: space-evenly;
   padding: 2rem;
 }
 
 .special {
-  background: #1c8d8d;
+  background-color: #1c8d8d;
   color: #ffffff;
-  font-size: 1.5rem;
+  font-size: 2.1rem;
   font-weight: 900;
-  /*font-family: Raleway;*/
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 4rem;
+  display: inline-block;
+  vertical-align: middle;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
+  transition: background-color ease-out 250ms;
+  cursor: pointer;
 }
-
+.special:hover {
+  color: #fc913a;
+  text-shadow: none;
+  background-color: #555;
+  transform: scale(1.05, 1.05) translate3d(0, 0, 0);
+}
 .d200 {
   max-width: 95%;
   /*height: 300px;*/
@@ -87,22 +99,12 @@
   padding: 2%;
 }
 
-.innermenucontainer {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 2rem;
-  font-size: 1.5rem;
-  font-weight: 900;
-  font-family: Raleway;
-  justify-content: space-evenly;
-}
-
 .coloredbar {
   background: rgb(64, 148, 82);
   margin-bottom: 0;
   color: white;
   box-shadow: 0 0 0 2px lightgrey;
-  border: 4px solid #fff;
+  /* border: 4px solid #fff; */
 }
 
 .wlink {

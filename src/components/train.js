@@ -43,7 +43,7 @@ class Train extends React.Component {
       const values = this.state.metrics[metric]
       const ldata = this.state.allcharts[metric]
       return (
-        <div key={metric} className="d200">
+        <div key={metric} className="d200 boxshadow">
           <Line data={ldata} />
         </div>
       )
@@ -61,7 +61,7 @@ class Train extends React.Component {
 
     return (
       <div>
-        <div className="chart  border-1 boxshadow">{metricElems}</div>
+        <div className="chart">{metricElems}</div>
         {this.state.modelElement}
       </div>
     )
@@ -69,7 +69,7 @@ class Train extends React.Component {
 
   shouldComponentUpdate(nextProps, nextState) {
     return (
-      this.props.display != nextProps.display ||
+      //this.props.display != nextProps.display ||
       this.props.train != nextProps.train ||
       this.state.modelElement != nextState.modelElement ||
       this.state.metrics != nextState.metrics

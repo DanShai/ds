@@ -27,7 +27,7 @@ class Blog extends React.Component {
             {posts.map(({ node }) => {
               const title = get(node, 'frontmatter.title') || node.fields.slug
               return (
-                <div key={node.fields.slug} className="box border-1 boxshadow">
+                <div key={node.fields.slug} className="box boxshadow">
                   <h3>
                     <Link className="alink" to={node.fields.slug}>
                       <span>{title}</span>{' '}

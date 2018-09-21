@@ -8,14 +8,14 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons'
 const Interet = props => (
   <section className="interests">
     <div className="container grid-3 center">
-      <div className="box border-1 boxshadow">
+      <div className="box boxshadow">
         <a href="https://github.com/DanShai">GitHub</a>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil,
           reiciendis!
         </p>
       </div>
-      <div className="box border-1 boxshadow">
+      <div className="box boxshadow">
         <Link className="alink" to="/blog">
           Blog
         </Link>
@@ -24,7 +24,7 @@ const Interet = props => (
           reiciendis!
         </p>
       </div>
-      <div className="box border-1 boxshadow">
+      <div className="box boxshadow">
         <Link className="alink" to="/mnistpred">
           Projects
         </Link>

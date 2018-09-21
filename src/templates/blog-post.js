@@ -31,7 +31,7 @@ class BlogPostTemplate extends React.Component {
             <h2>{post.frontmatter.title}</h2>
           </span>
           <div
-            className="box border-1 boxshadow"
+            className="box boxshadow"
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
 

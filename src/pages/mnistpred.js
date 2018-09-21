@@ -102,7 +102,7 @@ export default class Mnist extends React.Component {
   }
 
   predict() {
-    const testDigits = [1, 3, 4, 5, 8, 9]
+    const testDigits = [1, 3, 4, 5, 8]
     // Randomly selects a test digit, ideally this is drawn from the val
     // set. But it's just random for now.
     const test = tf.stack(
@@ -121,7 +121,7 @@ export default class Mnist extends React.Component {
         const prddgt = predictedArr[i]
         const imgpred = mnist[prddgt].get()
         return (
-          <div key={i}>
+          <div key={i} className="boxshadow">
             <span className="bspant"> Real </span>
             <Canvas width={28} height={28} mnist={mnist} imgdigit={imgdigit} />
             <Canvas width={28} height={28} mnist={mnist} imgdigit={imgpred} />
@@ -141,45 +141,37 @@ export default class Mnist extends React.Component {
           <title>Mnist - Prediction </title>
           <meta name="description" content="Generic Page" />
         </Helmet>
-        <section className="container border-1 boxshadow">
+        <section className="container">
           <header className="bheader">
             <h2> Mnist Convolutional Neural Network Prediction </h2>
           </header>
+          <div className="btdiv">
+            <span
+              className=" special boxshadow"
+              onClick={() => this.setState({ training: !this.state.training })}
+            >
+              {this.state.training ? ' Pause' : ' Train'}
+            </span>
 
-          <div className="blogcontent">
-            <h2> Tensorflow Mnist Training and Predictions </h2>
-            <div className="btdiv">
-              <button
-                className="border-1 special boxshadow"
-                onClick={() =>
-                  this.setState({ training: !this.state.training })
-                }
+            {this.state.trained && (
+              <span
+                className="special boxshadow"
+                onClick={() => this.predict()}
               >
-                {this.state.training ? ' Pause' : ' Train'}
-              </button>
-
-              {this.state.trained && (
-                <button
-                  className="border-1 special boxshadow"
-                  onClick={() => this.predict()}
-                >
-                  Predict
-                </button>
-              )}
-            </div>
-
-            <div className="prob  border-1 boxshadow">
-              {this.state.predicted}
-            </div>
-
-            <MnistModel
-              onTrainEnd={model => this.setState({ model })}
-              onBatchEnd={(metrics, model) =>
-                this.setState({ model, trained: true })
-              }
-              train={this.state.training}
-            />
+                Predict
+              </span>
+            )}
           </div>
+
+          <div className="prob">{this.state.predicted}</div>
+
+          <MnistModel
+            onTrainEnd={model => this.setState({ model })}
+            onBatchEnd={(metrics, model) =>
+              this.setState({ model, trained: true })
+            }
+            train={this.state.training}
+          />
         </section>
       </Layout>
     )

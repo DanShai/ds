@@ -130,7 +130,7 @@
 }
 
 .menu-btn-open ~ .menu-item:nth-child(5) {
-  transition-duration: 380ms;
+  transition-duration: 480ms;
   transform: translate3d(12.947px, 104.476px, 0);
 }
 
@@ -215,7 +215,7 @@
     transform: translate3d(47.947px, 36.476px, 0);
   }
   .menu-btn-open ~ .menu-item:nth-child(5) {
-    transition-duration: 380ms;
+    transition-duration: 480ms;
     transform: translate3d(-1.053px, 59.476px, 0);
   }
 }

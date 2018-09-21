@@ -271,7 +271,7 @@ a,
 
   .interests div {
     top: 1%;
-    border-bottom: #333 dashed 1px;
+    /* border-bottom: #333 dashed 1px; */
     padding: 1.2rem 1rem;
   }
 }
