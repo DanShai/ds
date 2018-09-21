@@ -138,7 +138,7 @@ export default class Menu extends React.Component {
 
         <Link
           onClick={() => this.hidemenu()}
-          className="alink menu-item purple"
+          className="alink menu-item pumpkin"
           to="/blog"
         >
           <i className="icon">

@@ -166,14 +166,14 @@
   text-shadow: none;
 }
 
-.purple {
-  background-color: #9b59b6;
+.pumpkin {
+  background-color: #d35400;
   box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.14);
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
 }
 
-.purple:hover {
-  color: #9b59b6;
+.pumpkin:hover {
+  color: #d35400;
   text-shadow: none;
 }
 
