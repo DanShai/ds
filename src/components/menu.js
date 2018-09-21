@@ -16,57 +16,80 @@ export default class Menu extends React.Component {
     }
     this.scrolly = 0
     this.curscrolly = 0
-    this.hidetimeout = null
+    this.autotimeout = null
+    this.start = null
+    this._isMounted = false
   }
 
   componentDidMount() {
+    this._isMounted = true
     window.addEventListener('scroll', () => this.handlescroll())
   }
 
   componentWillUnmount() {
+    this._isMounted = false
     window.removeEventListener('scroll', () => this.handlescroll())
-    clearTimeout(this.hidetimeout)
+    clearTimeout(this.autotimeout)
   }
 
   hidemenu() {
     this.scrolly = this.curscrolly
-    this.hidetimeout = setTimeout(() => {
+    if (this._isMounted) {
       this.setState({
         showmenu: false,
         count: 0,
         open: false,
       })
-      console.log('in hide', JSON.stringify(this.state))
-    }, 100)
+    }
+    console.log('in hide', JSON.stringify(this.state))
+    this.start = null
   }
 
   btnClicked() {
-    this.hidetimeout = setTimeout(() => {
+    if (this._isMounted) {
       this.setState({
         open: !this.state.open,
         count: this.state.count + 1,
       })
-      console.log('in btn', JSON.stringify(this.state))
-      if (this.state.count > 1) {
+    }
+    console.log('in btn', JSON.stringify(this.state))
+    if (this.state.count > 1) {
+      this.hidemenu()
+    }
+  }
+
+  autoclose() {
+    if (
+      this.state.count == 0 &&
+      this.state.showmenu == true &&
+      this.state.open == false
+    ) {
+      const now = new Date().getSeconds()
+      if (this.start !== null && now - this.start > 5) {
+        console.log(this.start, now)
+        console.log('in auto', JSON.stringify(this.state))
         this.hidemenu()
       }
-    }, 100)
+    }
   }
 
   handlescroll() {
     this.curscrolly = window.scrollY
     if (this.scrolly !== this.curscrolly) {
-      this.hidetimeout = setTimeout(() => {
+      if (this._isMounted) {
         this.setState({
           showmenu: true,
         })
-        this.scrolly = this.curscrolly
-      }, 100)
+      }
+      this.scrolly = this.curscrolly
     }
+    this.start = new Date().getSeconds()
+    this.autotimeout = setTimeout(() => {
+      this.autoclose()
+    }, 7000)
   }
 
   render() {
-    // console.log(this.state.showmenu, this.scrolly)
     return (
       <nav className={`menu ${this.state.showmenu ? 'visible' : 'hidden'}`}>
         <div
