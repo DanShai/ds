@@ -20,47 +20,44 @@ export default class Menu extends React.Component {
     this._isMounted = false
   }
 
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   return (
-  //     this.state.open != nextState.open ||
-  //     this.state.showmenu != nextState.showmenu
-  //   )
-  // }
-  // componentDidUpdate(prevProps) {
-  //   this.autoclose()
-  // }
-
   componentDidMount() {
     this._isMounted = true
+    this.start = null
+    this.scrolly = 0
     window.addEventListener('scroll', () => this.handlescroll())
   }
 
   componentWillUnmount() {
     this._isMounted = false
-    window.removeEventListener('scroll', () => this.handlescroll())
     clearTimeout(this.autotimeout)
+    window.removeEventListener('scroll', () => this.handlescroll())
   }
 
   hidemenu() {
-    this.scrolly = this.curscrolly
+    console.log(this._isMounted)
     if (this._isMounted) {
-      this.setState({
-        showmenu: false,
-        open: false,
-      })
-      console.log('in hide', JSON.stringify(this.state))
-      this.start = null
+      this.setState(
+        {
+          showmenu: false,
+          open: false,
+        },
+        () => console.log('in hide', JSON.stringify(this.state))
+      )
     }
   }
 
   btnClicked() {
     if (this._isMounted) {
-      this.setState({
-        open: !this.state.open,
-      })
+      this.setState(
+        {
+          open: !this.state.open,
+        },
+        () => {
+          console.log('in btn', JSON.stringify(this.state))
+          this.autoclose()
+        }
+      )
     }
-    console.log('in btn', JSON.stringify(this.state))
-    this.autoclose()
   }
 
   autoclose() {
@@ -78,13 +75,17 @@ export default class Menu extends React.Component {
     this.curscrolly = window.scrollY
     if (this.scrolly !== this.curscrolly) {
       if (this._isMounted) {
-        this.setState({
-          showmenu: true,
-        })
+        this.setState(
+          {
+            showmenu: true,
+            open: false,
+          },
+          () => (this.scrolly = this.curscrolly)
+        )
       }
-      this.scrolly = this.curscrolly
     }
     this.start = new Date().getSeconds()
+    clearTimeout(this.autotimeout)
     this.autotimeout = setTimeout(() => {
       this.autoclose()
     }, 6000)

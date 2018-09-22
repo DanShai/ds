@@ -4,7 +4,6 @@ import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 import Layout from '../components/layout'
 import 'katex/dist/katex.min.css'
-import favicon from '../assets/images/omega.png'
 
 class Blog extends React.Component {
   render() {
@@ -19,8 +18,6 @@ class Blog extends React.Component {
         <Helmet>
           <title>Blog - Dan </title>
           <meta name="description" content="Generic Page" />
-          link=
-          {[{ rel: 'shortcut icon', type: 'image/png', href: `${favicon}` }]}
         </Helmet>
         <section className="container">
           <header className="bheader">

@@ -64,14 +64,15 @@
   display: inline-block;
   vertical-align: middle;
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
-  transition: background-color ease-out 250ms;
+  transition: all ease-out 200ms;
   cursor: pointer;
 }
 .special:hover {
   color: #fc913a;
   text-shadow: none;
   background-color: #555;
-  transform: scale(1.05, 1.05) translate3d(0, 0, 0);
+  transform: scale(1.05, 1.05) translateX(-0.5rem);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
 }
 .d200 {
   max-width: 95%;

@@ -4,7 +4,6 @@ import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 import Layout from '../components/layout'
 import 'katex/dist/katex.min.css'
-import favicon from '../assets/images/omega.png'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -20,9 +19,6 @@ class BlogPostTemplate extends React.Component {
           htmlAttributes={{ lang: 'en' }}
           meta={[{ name: 'description', content: siteDescription }]}
           title={`${post.frontmatter.title} | ${siteTitle}`}
-          link={[
-            { rel: 'shortcut icon', type: 'image/png', href: `${favicon}` },
-          ]}
         />
         <section className="container">
           <Link className="alink" to="/blog">
