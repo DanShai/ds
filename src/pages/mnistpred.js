@@ -146,20 +146,20 @@ export default class Mnist extends React.Component {
             <h2> Mnist Convolutional Neural Network Prediction </h2>
           </header>
           <div className="btdiv">
-            <span
+            <button
               className=" special boxshadow"
               onClick={() => this.setState({ training: !this.state.training })}
             >
               {this.state.training ? ' Pause' : ' Train'}
-            </span>
+            </button>
 
             {this.state.trained && (
-              <span
+              <button
                 className="special boxshadow"
                 onClick={() => this.predict()}
               >
                 Predict
-              </span>
+              </button>
             )}
           </div>
 
