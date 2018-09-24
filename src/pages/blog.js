@@ -4,6 +4,7 @@ import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 import Layout from '../components/layout'
 import 'katex/dist/katex.min.css'
+// import '../assets/css/mkatex.css'
 
 class Blog extends React.Component {
   render() {

@@ -1,3 +1,5 @@
+const autoprefixer = require('autoprefixer')
+
 module.exports = {
   siteMetadata: {
     title: 'Dan - Shai',
@@ -51,6 +53,17 @@ module.exports = {
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-smartypants',
         ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-postcss`,
+      options: {
+        postCssPlugins: [
+          autoprefixer({
+            browsers: ['last 4 versions'],
+          }),
+        ],
+        precision: 8,
       },
     },
     {
