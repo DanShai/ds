@@ -78,6 +78,18 @@ h1 {
   width: 180px;
 }
 
+.foot-span {
+  color: #56ac88;
+  text-shadow: none;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  padding: 0.25rem 0;
+  text-align: left;
+  text-transform: uppercase;
+}
+
 .title {
   color: #56ac88;
   text-shadow: none;
@@ -109,6 +121,14 @@ h1 {
   display: grid;
   grid-gap: 2rem;
   grid-template-columns: repeat(3, 1fr);
+  /* justify-items: center; */
+  justify-content: space-evenly;
+}
+
+.grid-6 {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(6, 1fr);
   /* justify-items: center; */
   justify-content: space-evenly;
 }
@@ -269,7 +289,8 @@ a,
 
   .grid-menu,
   .grid-3,
-  .grid-2 {
+  .grid-2,
+  .grid-6 {
     grid-template-columns: 1fr;
   }
   .left,

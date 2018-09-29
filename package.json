@@ -12,6 +12,7 @@
     "autoprefixer": "^9.1.5",
     "chart.js": "^2.7.2",
     "gatsby": "next",
+    "gatsby-cli": "^2.4.2",
     "gatsby-plugin-favicon": "^3.1.4",
     "gatsby-plugin-manifest": "next",
     "gatsby-plugin-offline": "next",

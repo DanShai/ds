@@ -9,6 +9,9 @@ const About = props => (
       <div className="grid-2">
         <div className="box boxshadow">
           <h3>Hobbies</h3>
+          <Link className="alink" to="/premierelg">
+            CSV TEST
+          </Link>
           <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non eos
             aperiam labore consectetur maiores ea magni exercitationem similique
