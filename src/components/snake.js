@@ -135,7 +135,6 @@ export default class sgame extends Component {
   handleKeys(e) {
     e.preventDefault()
     const key = e.keyCode
-    // console.log(key)
     switch (key) {
       case 32:
         this._init()
