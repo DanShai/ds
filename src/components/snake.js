@@ -29,20 +29,10 @@ export default class sgame extends Component {
     this._snakeH = 20
     this._food = { x: 80, y: 80 }
     this._velocity = { x: 0, y: 0 }
+    this._pause = false
+    this._imdead = false
     clearTimeout(this._timeout)
     this._timeout = setInterval(() => this.draw(), 1000)
-  }
-  move() {
-    const sw = this._snakeW
-    const sh = this._snakeH
-    const v = this._velocity
-    const len = this._snake.length
-    const last = this._snake[len - 1]
-    let head = { ...last }
-    this._snake.shift()
-    head.x += v.x * sw
-    head.y += v.y * sh
-    this._snake.push(head)
   }
 
   isDead() {
@@ -92,10 +82,38 @@ export default class sgame extends Component {
     const last = this._snake[len - 1]
     let head = { ...last }
     this._snake.push(head)
+    console.log('After: ', [...this._snake])
+  }
+
+  move() {
+    const sw = this._snakeW
+    const sh = this._snakeH
+    const v = this._velocity
+    const len = this._snake.length
+    const last = this._snake[len - 1]
+    console.log('beshift: ', [...this._snake])
+    let head = { ...last }
+    this._snake.shift()
+    console.log('afshift: ', [...this._snake])
+
+    head.x += v.x * sw
+    head.y += v.y * sh
+    this._snake.push(head)
+    console.log('afpush: ', [...this._snake])
+  }
+
+  pause() {
+    console.log(this._pause)
+    this._pause = !this._pause
+    if (this._pause) {
+      clearTimeout(this._timeout)
+    } else {
+      this._timeout = setInterval(() => this.draw(), 1000)
+    }
   }
 
   draw() {
-    if (this._isMounted) {
+    if (this._isMounted && !this._pause) {
       const ctx = this._canvas.getContext('2d')
       const w = this.props.width
       const h = this.props.height
@@ -106,7 +124,6 @@ export default class sgame extends Component {
       ctx.fillStyle = '#454545'
       ctx.fillRect(0, 0, w, h)
 
-      this.move()
       ctx.fillStyle = '#fc913a'
       for (let p of this._snake) {
         ctx.fillRect(p.x, p.y, sw, sh)
@@ -115,6 +132,8 @@ export default class sgame extends Component {
       ctx.fillStyle = '#56ac88'
       ctx.fillRect(this._food.x, this._food.y, sw, sh)
 
+      this.move()
+
       if (this.isEaten()) {
         this.getfat()
         this.randomizeFood(w, h)
@@ -122,6 +141,7 @@ export default class sgame extends Component {
 
       if (this.isDead()) {
         clearTimeout(this._timeout)
+        this._imdead = true
         ctx.fillStyle = '#669ae1'
         ctx.fillRect(0, 0, w, h)
         //ctx.font = '30px Arial'
@@ -137,7 +157,11 @@ export default class sgame extends Component {
     const key = e.keyCode
     switch (key) {
       case 32:
-        this._init()
+        if (this._imdead) {
+          this._init()
+        } else {
+          this.pause()
+        }
         break
       case 37:
         this._velocity = { x: -1, y: 0 }
