@@ -12,6 +12,10 @@ const About = props => (
           <Link className="alink" to="/premierelg">
             CSV TEST
           </Link>
+          <Link className="alink" to="/sgame">
+            Snake
+          </Link>
+
           <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non eos
             aperiam labore consectetur maiores ea magni exercitationem similique

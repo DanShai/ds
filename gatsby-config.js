@@ -5,9 +5,9 @@ module.exports = {
     title: 'Dan - Shai',
     author: 'Dan Shai',
     description: ' Dan Blog ',
-    siteUrl: 'https://github.com/Danshai/tempo',
+    siteUrl: 'https://danshai.github.io/ds',
   },
-  pathPrefix: '/tempo',
+  pathPrefix: '/ds',
   plugins: [
     'gatsby-plugin-react-helmet',
     {
